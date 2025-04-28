@@ -1,106 +1,88 @@
-
-
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: lightblue;
-    padding: 10px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
 }
 
-
-
-.to-do-list {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.to-do-list img{
-    width: 7vh
-}
-
-.btn{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
+h1 {
     color: #333;
-    padding: 10px;
-    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.btn input{
-    flex: 1;
-    /* border: none; */
-    border-radius: 30px;
-    padding: 10px;
-    font-size: 1.2rem;
-    
+.input-group {
+    display: flex;
+    gap: 10px;
 }
 
-.btn button{
+input[type="text"] {
     flex: 1;
-    border: none; 
-    border-radius: 20px;
     padding: 10px;
-    margin-top:8px;
-    font-size: 1.2rem;
-    background-color: #ff105f;
-    color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.btn button:hover{
-    background-color: #ffad06;
+button:hover {
+    background-color: #3949ab;
 }
 
-#list li{
-    list-style: none;
+ul {
+    list-style-type: none;
+    padding: 0;
     margin-top: 20px;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-}
-#list li:hover{
-    background-color: #f0f0f0;
-    cursor: pointer;
-    } 
-
-#list li::before{
-    content: '';
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-image: url("images/unchecked.png"); 
 }
 
-#list li.checked{
-    color: #555;
+li {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+li.completed {
     text-decoration: line-through;
-     
-}
-#list li.checked::before{
-    background-image: url("images/checked.png");
+    color: gray;
 }
 
-#list li span {
-    position: absolute;
-    top:  5px;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 18px;
+    cursor: pointer;
 }
+
 
 #list li span:hover{
     background-color: #f0f0f0; 
