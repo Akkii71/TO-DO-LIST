@@ -2,26 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do list</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="to-do-list">
-            <h1>To-Do list <img src="images/icon.png" alt=""></h1>
-            <div class="btn">
-                    <input type="text" id="task" placeholder="Enter a task">
-                    <button type="submit" id="submit" onclick="addTask()">Add task</button>
-            </div>
-            <div class="listcontainer">
-                <ul id="list">
-                    <li>Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li> 
-                </ul>
-            </div>
+        <h1>Stay Organized!</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="What's on your mind?">
+            <button onclick="addTask()">Add Task</button>
         </div>
+        <ul id="taskList"></ul>
     </div>
     <script src="script.js"></script>
 </body>
