@@ -1,36 +1,32 @@
-// const list = document.getElementById("list");
-
 function addTask() {
-    if (task.value === '') {
-        alert("You must write something!");
-    } else {
-        let li = document.createElement('li');
-        li.innerHTML = task.value;
-        listcontainer.appendChild(li);
-        let span = document.createElement('span');
-        span.innerHTML = 'X';
-        li.appendChild(span);
+    const taskInput = document.getElementById("taskInput");
+    const taskText = taskInput.value.trim();
+
+    if (taskText === "") {
+        alert("Please type something before adding!");
+        return;
     }
-    task.value = '';
-    saveData();
+
+    const taskList = document.getElementById("taskList");
+
+    const listItem = document.createElement("li");
+    listItem.textContent = taskText;
+
+    listItem.addEventListener("click", function () {
+        this.classList.toggle("completed");
+    });
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "✖";
+    deleteButton.className = "delete-btn";
+    deleteButton.addEventListener("click", function (e) {
+        e.stopPropagation(); 
+        taskList.removeChild(listItem);
+    });
+
+    listItem.appendChild(deleteButton);
+    taskList.appendChild(listItem);
+
+    taskInput.value = "";
 }
 
-listcontainer.addEventListener("click", function(e) {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.toggle("checked");
-        saveData();
-    } else if (e.target.tagName === 'SPAN') {
-        e.target.parentElement.remove();
-        saveData();
-    }
-}, false);
-
-function saveData() {
-    localStorage.setItem('data', listcontainer.innerHTML);
-}
-
-function showTask() {
-    listcontainer.innerHTML = localStorage.getItem('data');
-}
-
-showTask();
